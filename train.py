@@ -3,30 +3,30 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 # test hyperparameters
-# batch_size = 32
-# block_size = 8
-# max_iters = 5000
-# eval_interval = 300
-# learning_rate = 1e-2
-# device = "cuda" if torch.cuda.is_available() else "cpu"
-# eval_iters = 200
-# n_embd = 32
-# n_heads = 4
-# n_blocks = 4
-# dropout = 0.2
-
-# hyperparameters
-batch_size = 64
-block_size = 256
+batch_size = 32
+block_size = 8
 max_iters = 5000
-eval_interval = 500
-learning_rate = 3e-4
+eval_interval = 300
+learning_rate = 1e-2
 device = "cuda" if torch.cuda.is_available() else "cpu"
 eval_iters = 200
-n_embd = 384
-n_heads = 6
-n_blocks = 6
+n_embd = 32
+n_heads = 4
+n_blocks = 4
 dropout = 0.2
+
+# hyperparameters
+# batch_size = 64
+# block_size = 256
+# max_iters = 5000
+# eval_interval = 500
+# learning_rate = 3e-4
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+# eval_iters = 200
+# n_embd = 384
+# n_heads = 6
+# n_blocks = 6
+# dropout = 0.2
 # -------------
 
 torch.manual_seed(1337)
@@ -75,44 +75,57 @@ def estimate_loss():
     model.train()
     return out
 
+# class Head(nn.Module):
+    # def __init__(self, head_size):
+    #     super().__init__()
+    #     self.head_size = head_size
+    #     self.key = nn.Linear(n_embd, head_size, bias=False)
+    #     self.query = nn.Linear(n_embd, head_size, bias=False)
+    #     self.value = nn.Linear(n_embd, head_size, bias=False)
+    #     self.register_buffer("tril", torch.tril(torch.ones(block_size, block_size)))
+    #     self.dropout = nn.Dropout(dropout)
 
-class Head(nn.Module):
-    def __init__(self, head_size):
+    # def forward(self, x):
+    #     B, T, C = x.shape
+    #     k = self.key(x)  # (B,T,C), where C is head_size
+    #     q = self.query(x)  # (B,T,C)
+
+    #     wei = (
+    #         q @ k.transpose(-2, -1) * (self.head_size**-0.5)
+    #     )  # (B,T,C) @ (B, C, T) --> (B,T,T)
+    #     wei = wei.masked_fill(self.tril[:T, :T] == 0, float("-inf"))  # (B,T,T)
+    #     wei = F.softmax(wei, dim=-1)  # (B,T,T)
+    #     wei = self.dropout(wei)
+
+    #     v = self.value(x)  # (B,T,C)
+    #     out = wei @ v  # (B,T,T) @ (B,T,C) --> (B,T,C)
+    #     return out
+
+class MultiHeadAttention(nn.Module):
+    def __init__(self, num_heads, n_embd):
         super().__init__()
-        self.head_size = head_size
-        self.key = nn.Linear(n_embd, head_size, bias=False)
-        self.query = nn.Linear(n_embd, head_size, bias=False)
-        self.value = nn.Linear(n_embd, head_size, bias=False)
-        self.register_buffer("tril", torch.tril(torch.ones(block_size, block_size)))
+        self.qkv_proj = nn.Linear(n_embd, 3 * n_embd, bias=False)
+        self.proj = nn.Linear(n_embd, n_embd)
         self.dropout = nn.Dropout(dropout)
+        self.n_heads = num_heads
+        self.head_size = n_embd // num_heads
 
     def forward(self, x):
         B, T, C = x.shape
-        k = self.key(x)  # (B,T,C), where C is head_size
-        q = self.query(x)  # (B,T,C)
+        qkv = self.qkv_proj(x)  # (B,T,3*C)
+        q, k, v = qkv.chunk(3, dim=-1)  # each is (B,T,C)
+        
+        q = q.view(B, T, self.n_heads, self.head_size).transpose(1, 2)  # (B,n_heads,T,head_size)
+        k = k.view(B, T, self.n_heads, self.head_size).transpose(1, 2)  # (B,n_heads,T,head_size)
+        v = v.view(B, T, self.n_heads, self.head_size).transpose(1, 2)  # (B,n_heads,T,head_size)
+        
+        out = F.scaled_dot_product_attention(
+            q, k, v, 
+            dropout_p=dropout if self.training else 0.0, 
+            is_causal=True
+        )
+        out = out.transpose(1, 2).contiguous().view(B, T, C)
 
-        wei = (
-            q @ k.transpose(-2, -1) * (self.head_size**-0.5)
-        )  # (B,T,C) @ (B, C, T) --> (B,T,T)
-        wei = wei.masked_fill(self.tril[:T, :T] == 0, float("-inf"))  # (B,T,T)
-        wei = F.softmax(wei, dim=-1)  # (B,T,T)
-        wei = self.dropout(wei)
-
-        v = self.value(x)  # (B,T,C)
-        out = wei @ v  # (B,T,T) @ (B,T,C) --> (B,T,C)
-        return out
-
-
-class MultiHeadAttention(nn.Module):
-    def __init__(self, num_heads, head_size):
-        super().__init__()
-        self.heads = nn.ModuleList([Head(head_size) for _ in range(num_heads)])
-        self.proj = nn.Linear(n_embd, n_embd)
-        self.dropout = nn.Dropout(dropout)
-
-    def forward(self, x):
-        # h(x) is (B,T,head_size)
-        out = torch.cat([h(x) for h in self.heads], dim=-1)  # (B,T,n_embd)
         out = self.proj(out)  # (B,T,n_embd)
         out = self.dropout(out)
         return out
@@ -135,8 +148,7 @@ class FeedForward(nn.Module):
 class Block(nn.Module):
     def __init__(self, n_embd, num_heads):
         super().__init__()
-        head_size = n_embd // num_heads
-        self.sa_heads = MultiHeadAttention(num_heads, head_size)
+        self.sa_heads = MultiHeadAttention(num_heads, n_embd)
         self.ffwd = FeedForward(n_embd)
         self.ln1 = nn.LayerNorm(n_embd)
         self.ln2 = nn.LayerNorm(n_embd)
