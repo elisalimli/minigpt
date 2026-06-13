@@ -1,0 +1,52 @@
+# hyperparameters
+batch_size = 64
+block_size = 256
+max_iters = 5000
+eval_interval = 500
+learning_rate = 3e-4
+# device = xm.xla_device()
+device = "cuda" if torch.cuda.is_available() else "cpu"
+eval_iters = 200
+n_embd = 384
+n_heads = 6
+n_blocks = 6
+dropout = 0.2
+
+--
+
+step 0: train loss 4.2845, val loss 4.2815
+step 500: train loss 1.8863, val loss 1.9962
+step 1000: train loss 1.5354, val loss 1.7642
+step 1500: train loss 1.3895, val loss 1.6878
+step 2000: train loss 1.3038, val loss 1.6434
+step 2500: train loss 1.2452, val loss 1.6313
+step 3000: train loss 1.1948, val loss 1.6088
+step 3500: train loss 1.1465, val loss 1.6094
+step 4000: train loss 1.1119, val loss 1.6062
+step 4500: train loss 1.0706, val loss 1.6201
+
+KLRD AND WILGREY:
+Wullusty with our foreedal party thee.
+
+KING RICHARD III:
+How hath not father, thou detestroy'st thyself?
+
+CLARENCE:
+Rutchern, am I wish.
+
+BUCKINGHAM:
+No good Northumberlans:
+This and comes to realm, as yours,
+What love your fore I'll advise you to hear the heinous.
+
+CLARENCE:
+Welcome that warship appetite what sunders
+Is from him mending in forth Bolingbroke
+And frost. But dost so have long for you,
+As I do callect sure so flowery: not still for himself
+He cannot all denied.
+
+
+torch.Size([1, 1])
+
+```

@@ -1,0 +1,373 @@
+---
+# Hyperparameters
+batch_size = 64
+block_size = 256
+max_iters = 5000
+eval_interval = 500
+learning_rate = 3e-4
+# device = xm.xla_device()
+device = "cuda" if torch.cuda.is_available() else "cpu"
+eval_iters = 200
+n_embd = 384
+n_heads = 6
+n_blocks = 6
+dropout = 0.2
+---
+
+Boy:
+What is the mayor cawardice, and word not
+Is in alll eyes have.
+
+COMINIUS:
+If
+Were departs Ogenion; there were forth any horn,
+Beholding you tongue that would never, tere all
+The Capitol
+In love: out of sometime of grace intone a fawn,
+Why sought I am young that would cerem to speak it is conounce:
+If trunk it movelting is above well: since you to punish:
+What he, 'train'd I fear, since, for your native,
+Farewell: but I'll fear?
+
+ISABELLA:
+Hail.
+
+CLAL:
+And, so you spociase it do now none.
+
+ANGELO:
+Lord them, and make you! you have but fly condempted
+Dive toln and by lamentables: the hands are tame,
+Their now frail apprehend and of all appearing:
+Come on your enemies, you and so horself.
+
+LUCIO:
+
+CAMILLO:
+
+Prithee, vesend confirmaters! Let that this prince
+Will be large to put out talk contentation,
+Yet, let usle. Your prants, Pompey.
+Well, friends, let us with father gates;
+Tell me know what I shall'd a sea,
+That reat kill one this damp? Wolve I would dove the may holp,
+Not that never till reagr use the way
+Concer's their burnakenied with dangerous by the honour.
+Have drides their stoned up from temory!
+Come, friend me and I was to King Henry,
+In shame, thou now, at the desire of me?
+This soul suits this conquer is now,--
+As shall when I know with thy deserve;
+And let I leisurely shall reign it up:
+Are those be smiles to coming thus we seem do;
+But, even none and too swear attorneys;
+Who then ne'er tells the child cry tue of war
+The wholest tale patience boy?
+
+POLIXENES:
+Thoughsome, come, lords, away.
+
+POMPEY:
+Why, Patian, but thy mannantical spirit does!
+Thy pace for divised rage son, not angerous young,
+Thy liege, by raves at thy knee
+Should tempest noble burdeed this: I ever
+Be it came, leave mark sumed, I can do the Capitus La!
+
+PERDITA:
+O woman!
+
+ISABELLA:
+Is't a secle,
+Madam, make consel afternoon. What you bring
+The relish you, to him and set with them
+With to such a gratity? Go, with not prosecy
+The gods to begin the lord; and I will well speak
+For this wrong womaning together'd in her breath,
+As that, I'll feel holpbroke to him.
+
+Must Love Margaret,
+See:
+The measure of competer, let them pities Elbond abond,
+The city heer of the discovording out of
+Angelo, some beating.
+
+Second Gentleman:
+Let lance, although I do advise my uncle;
+Laid, to Bushy, on, by Marcius are the thoughts,
+Will to thy drag Buckingham cannot the cause
+You oung Richard shall write us; none but,
+And put when they you think'd him too.
+
+CORIOLANUS:
+What!
+All mit he has?
+
+CORIOLANUS:
+Well,
+POLEO:
+Sweet maid, unlong to me, 'tis done;'
+And, for I will, sir, boy: but I necessity
+Like one go, I have had named: an't. But I beseech you seed
+'Tis betwixt more
+Than wear such that unvolcessary man immortal,
+For tapstiance this passh!
+
+COMINIUS:
+So danger in your arm'd.
+
+Second Marcius to want, fear
+The fair versel upon a boy pride and better
+To oven the sea
+Aff, till she that credem he strokes two lamentable.
+
+Second Menenius:
+Though not you, that know me see how your brother.
+
+CORIOLANUS:
+Thearts leves vennous speeds upon his boy
+At Lady Hastings, the salt, forbear;
+So sooned that seem my father, as prepare for hence.
+
+Third CORIOLANUS:
+Monstrous Conce, Corio fear
+Thou approbatoward me, was and
+The tempestimest persuadest strength
+Makes death, are not to good affection:
+Being hard-revenged voice on the mayor not
+Than Catain do it stroke!
+In those arms: this seeming beat about at a
+master, and moved that may thus robber-moved up,
+Nothing sentence is of the fairest?
+
+MENENIUS:
+
+VOLUMNIA:
+I pray i' thee-doile:
+And no gracious must good bite on, strate.
+You have any in come worthily have
+To man some hourly ones; may alivial,
+Above the postern: that hath the she does believed their foots
+Of bluckets, god
+In mankind our grove, as I must be gover,
+Since the names, he stearing in parting
+Belook their strangly: and do yet danger,
+I pray, and madam, to, strike as there;
+For should not stir, part up anon,
+With not sparent buried him.
+Up, lord; then; being the king, I cannot market?
+
+ANGELO:
+Nay, sir; and how are your father men staid by
+To-day, and more matters of full Master voices!
+Therefords Lord may with some company.
+3 KING HENRY VI
+
+QUEEN ELIZABETH:
+If not put me
+I will be brief worth, that would case your husband,
+Or him have no more soldier lived doth us.
+
+SICINIUS:
+Ot inch o' the queen's with the little, where have instants
+Like doctable: since not dole I have rather,
+Than can sufferied lay upon Iwarrant may:
+And in old gentleman, fear
+our discoveration storms to the publish;
+Being abbot; none hang or fall the king.
+
+LEONTES:
+If direct, steward,
+BlueKing blusking in discontention! and Hallongship,
+Provours more holply for a very force
+Ports bear of him: away, dragone not twent
+These two hard-gonemalled, make them again:
+Therefore, God, hie shall amerry with him.
+
+LEONTES:
+To-morrow, ilest thou behold'st the seeming.
+
+Servant:
+A Montague, in thy master hatse; he has been no one
+I'll make thi peremptor, as by my promise,
+What is great death; at he is comes from my trail
+Is nothing lorder.
+
+LEONTES:
+By the castitute, stands gentleman.
+
+HASTINGS:
+He does not indirect before him still advice;
+Thy labours for more undeed; they thank it not fear.
+
+ISABELLA:
+He will be longer, let it marrieve.
+
+LEONTES:
+Musicians; he hath cowardly tonguess: he
+has cau In't, but not in a matchs of stay sorrow'd;
+But it says her brother, the heavension
+Of all these resenath. How now! Caw is it that
+we nothing, but nothing to of according bond; whingst
+We, holp so shall be so undonable
+Manifester forth, Till thou hear be so; wilt thou keep'st
+Things all the thousand heaven.
+
+FLORIZEL:
+Sugh it to his heads?
+
+Messenger:
+I made perithmen. Look, good misle, having Juliet.
+Heir, dead and the days aid, seeing a visor good cheeks;
+For, breaking in the earth,-part impathens, that heart in the heavinty
+which that lime to the medice want one weeds, do Oxcomplish.
+
+JULIET:
+Is it the whom banished? would he such sworn to tread
+As he did: as I wurd to die the tale maid;
+Which hath sedding to me: to bring me me a speak,
+And what of the earth, by ready me speak. What store you more?
+
+JULIET:
+Soldier, take awake this boundred with men all-cozen:
+Well, dear her, may betransgress, somewhat; but, sir,
+Being raw and waking them of sacribe,
+That eaches without of it. What, you know
+Here by me: yet how, sir, let me ween you shows away
+The wrath, of all my prison, quickly does!
+
+GLOUCESTER:
+I know, this reason faithly to 's Henry's head.
+Farewell; am I.
+
+CLARENCE:
+I have so party, signiors and Romeo, if
+Dear not by the host ancient from the king:
+Nor for they that with your etreason's good,
+And do your dwell-create! do your bending
+In this basd were grain; who, that days your
+Thankfully straighted undertaken'd each on,
+I should not do this affairs? What are your
+tongues? for her battle sun are all fills
+Wisdoes it is the mworth.
+
+VIRGILIA:
+With almost that movels
+When he has mattless of a reason squains praise
+Do give altogether but the second, sevent
+By curse of a wall child, with one visits
+Light of this cuts whilst maidenhieve would perficial
+But brought so re's the lightle ten, madam.
+No pardonious house to this house, hoff!
+
+NORTHUMBESBERLA:
+Yet on thy exchange: my lord
+If not thy warlt determining flood?
+
+KING RICHARD III:
+I thank got thee of this! Sold all by the face,
+Scrown aboard; and that, a dogerow,
+Look intelligent woman, two orney shoeeds
+If corruption. She have tempt them, give of you there
+Would I wash the own to do the worst giddly
+A fide, when he had a talute of the nameless word.
+Tell me, villain, sweetly wise.
+
+COMINIUS:
+You lamentation! Showed Cupid
+By meaning of our mine?
+
+Mar:
+To other: a man of glebellion
+I' faith, for Adieu, desires unto the rembries:
+Deceive, bliss back him; while to the destriushing of the
+shame, he hath should nice in More.
+
+COMINIUS:
+Are sleck as you may, sir.
+
+MENENIUS:
+A must light!
+
+COMINIUS:
+Well, this wardly are gnost black: all 'twas your loves behind
+against Cominius spit; and all acces or hearts
+in Heartings anchor dogs.
+
+SICINIUS:
+Not talk upon your time words, I under separed,
+And his brabitter.
+
+Messenger:
+Well, master
+In awred in piece on the rashter them. Richard lady; the
+till The Sicillant ne'er sawlely with my claims; yet
+I ad desire with him supply: to death, if this nightful
+This is fair Chmaintle belove in your sixteen your retired again
+Tullus bleed: none then France
+shall: he not let Kice the beast, longer hence:
+And noble brother shall.
+
+CLAUDIO:
+As that purpose,
+It why love it banishes, but love to give him love
+That want thee, that should were fly forth wolf,
+Were boar'd the warms war, commit well the peace.
+
+Ser:
+Not being witness to be gone, the daughter:
+When, is your change should do it his earth condition?
+
+ESCALUS:
+Thou hast stand Coriolanus, to lneve that.
+
+DUKE VINCENTIO:
+Fair lie a record, I but dispossed into you
+content: that's tell then, cannot
+get the value, to wail in thy bay-bones. Sirst you did: now
+your misery so tender of him chasteled him
+to does audence: if you can speak more, you remain to assist
+himself to be!en friends a thing faults! Concement!
+For zeal upon him, Mantua: prisoners, now
+Callow gentlement cold; and wherein his brother
+than she, for Rome, then, to Cominius stood
+sitting of the words. You gods
+the glass, words seeking anforced for where to my safety
+braws what means what can ign to wield again.
+
+Soldier:
+Fonewell, give in him conjured kiss boy:
+never may be stranged.
+
+ABHORSON:
+Then?
+
+AUFIDIUS:
+Drinking to call thee before the reading.
+
+VOLUMNIA:
+Mossibless two-far?
+
+First Soldier:
+I hear be; letter; consuration, none.
+Still them Greater, my noble congratitulal,
+nothing steen: whiler gentleman,
+And by this must hurt I two talk in thy bosom.
+
+VIRGILIA:
+
+MARCIUS:
+Of that committed the horse shall
+Ascend to you.
+
+CORIOLANUS:
+Say with him.
+
+LARTIUS:
+O, this is the Richard hath set xomp'd his eyes:
+Rush, and this that art the Vorth,--
+
+POLIXENES:
+Do not know not what I do them?
+
+MISTRESS X
